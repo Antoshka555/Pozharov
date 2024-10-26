@@ -17,9 +17,9 @@ define('db_pass','admin_password');
 // Обявление класса для подключения к бд
 $db = new DB_class(db_host,db_name,db_user,db_pass);
 
-$query = $db->select(true,"*","anton1","task_id='1'");
+$query = $db->select(true,"*","anton1","");
 
-print_r($query);
+
 ?>
 
 
@@ -31,43 +31,24 @@ print_r($query);
 </head>
 <body>
 <div class="tasks">
-	<div class="task">
-		<div class="task-control">
-			<input type="checkbox" name="">
+	<?php
+	for ($i = 0; $i < count($query);$i++) {
+		?>
+		<div class="task">
+			<div class="task-control">
+				<input type="checkbox" name="">
+			</div>
+			<div class="task-text"><?php echo $query[$i]['task_text'] ?></div>
+			<div class="task-date">
+				<input type="date" name="">
+			</div>
 		</div>
-		<div class="task-text">Прийти на пару</div>
-		<div class="task-date">
-			<input type="date" name="">
-		</div>
-	</div>
+		<?php
+	}
+	?>
 	
-	<div class="task">
-		<div class="task-control">
-			<input type="checkbox" name="">
-		</div>
-		<div class="task-text">Прийти на пару</div>
-		<div class="task-date">
-			<input type="date" name="">
-		</div>
-	</div>
-	<div class="task">
-		<div class="task-control">
-			<input type="checkbox" name="">
-		</div>
-		<div class="task-text">Прийти на пару</div>
-		<div class="task-date">
-			<input type="date" name="">
-		</div>
-	</div>
-	<div class="task">
-		<div class="task-control">
-			<input type="checkbox" name="">
-		</div>
-		<div class="task-text">Прийти на пару</div>
-		<div class="task-date">
-			<input type="date" name="">
-		</div>
-	</div>
+	
+
 </div>
 </body>
 </html>
