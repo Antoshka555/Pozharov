@@ -18,4 +18,6 @@ define('db_pass','admin_password');
 $db = new DB_class(db_host,db_name,db_user,db_pass);
 
 $query = $db->select(true,"*","anton1","task_id='1'");
+
+print_r($query);
 ?>
