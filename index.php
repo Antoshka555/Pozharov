@@ -6,7 +6,7 @@ include_once 'db.class.php';
 define('db_host','localhost:3306');
 
 // Имя БД
-define('db_name','anton1');
+define('db_name','anton');
 
 // Пользователь БД
 define('db_user','admin');
@@ -17,5 +17,5 @@ define('db_pass','admin_password');
 // Обявление класса для подключения к бд
 $db = new DB_class(db_host,db_name,db_user,db_pass);
 
-$query = $db->select(true,"*","anton","task_id='1'");
+$query = $db->select(true,"*","anton1","task_id='1'");
 ?>
